@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import GetInstagramPosts from "./Services/Instagram";
+import Youtube from "./Components/Social/Youtube";
+// import Details from "./Details";
 
 const App = () => {
-  return <div className="App">empty app div</div>;
+  useEffect(() => {
+    GetInstagramPosts("gernaderjake");
+  });
+
+  return (
+    <div className="App">
+      <p>app div</p>
+      <Youtube />
+    </div>
+  );
 };
 
 export default App;
