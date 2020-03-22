@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import GetInstagramPosts from "./Services/Instagram";
+// import GetInstagramPosts from "./Services/Instagram";
 import Youtube from "./Components/Social/Youtube";
 // import Details from "./Details";
 
 const App = () => {
   useEffect(() => {
-    GetInstagramPosts("gernaderjake");
+    // GetInstagramPosts("gernaderjake");
   });
 
   return (

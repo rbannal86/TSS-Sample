@@ -17,11 +17,11 @@ const GetLatestYoutube = async (name: string) => {
 
   const YoutubeInfo = {
     channelId,
-    title: snippet.title,
-    description: snippet.description,
-    customUrl: snippet.customUrl,
-    thumbnails: snippet.thumbnails.high.url,
-    latestVideoId: idResults.items[0].id.videoId
+    title: snippet.title.toString(),
+    description: snippet.description.toString(),
+    customUrl: snippet.customUrl.toString(),
+    thumbnail: snippet.thumbnails.high.url.toString(),
+    latestVideoId: idResults.items[0].id.videoId.toString()
   };
   return YoutubeInfo;
 };
