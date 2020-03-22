@@ -29,7 +29,7 @@ const GetInstagramPosts = async (userName: string) => {
   // let datasetResponse = await dataset.json();
   // console.log(datasetResponse);
   let instaData: [] = await repeatTimeout(dataSetUrl);
-  let latestPosts = await instaData[0].latestPosts;
+  // let latestPosts = await instaData[0].latestPosts;
 };
 
 const repeatTimeout = async (
