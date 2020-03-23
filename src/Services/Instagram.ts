@@ -1,6 +1,19 @@
 const GetInstagramPosts = async (userName: string) => {
-  const baseUrl =
-    "https://api.apify.com/v2/acts/jaroslavhejlek~instagram-scraper/runs?token=MwfrBz2ncyn2SBKrQW9mpAGcm";
+  let dataSetId: string = await apifySearch(userName);
+  let dataSet: [] | void = await databaseFetch(dataSetId);
+  console.log(dataSet);
+  return dataSet;
+};
+
+const databaseFetch = async (dataSetId: string) => {
+  let dataSetUrl = `https://api.apify.com/v2/datasets/${dataSetId}/items`;
+  let results = await repeatTimeout(dataSetUrl);
+  console.log(results);
+  return results;
+};
+
+const apifySearch = async (userName: string) => {
+  const baseUrl = `https://api.apify.com/v2/acts/jaroslavhejlek~instagram-scraper/runs?token=${process.env.REACT_APP_API_APIFY}`;
   const data = {
     search: userName,
     searchType: "user",
@@ -23,13 +36,8 @@ const GetInstagramPosts = async (userName: string) => {
   let apifyResponse = await apifySearch.json();
 
   let dataSetId = await apifyResponse.data.defaultDatasetId;
-  let dataSetUrl = `https://api.apify.com/v2/datasets/${dataSetId}/items`;
 
-  // let dataset: any = await fetch(dataSetUrl);
-  // let datasetResponse = await dataset.json();
-  // console.log(datasetResponse);
-  let instaData: [] = await repeatTimeout(dataSetUrl);
-  let latestPosts = await instaData[0].latestPosts;
+  return dataSetId;
 };
 
 const repeatTimeout = async (
@@ -43,18 +51,17 @@ const repeatTimeout = async (
     instaData = await timeoutFetch(url);
     if (instaData.length === 0 && count < 10) {
       console.log("trying again");
-      repeatTimeout(url, instaData, count);
+      await repeatTimeout(url, instaData, count);
+    } else {
+      console.log(instaData);
+      return instaData;
     }
   }, 5000);
-
-  return instaData;
 };
 
 const timeoutFetch = async (url: string) => {
   let dataset = await fetch(url);
-  let datasetResponse = await dataset.json();
-  console.log(datasetResponse);
-  return datasetResponse;
+  return await dataset.json();
 };
 
 export default GetInstagramPosts;

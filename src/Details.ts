@@ -1,6 +1,7 @@
 const Details = {
   name: "Gernader Jake",
-  youtube: "gernaderjake"
+  youtube: "gernaderjake",
+  instagram: "gernaderjake"
 };
 
 export default Details;
