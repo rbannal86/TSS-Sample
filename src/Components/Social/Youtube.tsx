@@ -36,12 +36,13 @@ const Youtube = () => {
         </p>
         <p>Desc: {details!.description}</p>
         <p>
-          Channel link:{" "}
-          <a href={`http://youtube.com/${details!.customUrl}`}>here</a>
+          Channel link:
+          <a href={`http://youtube.com/${details!.customUrl}`}> here</a>
         </p>
         <p>
           Latest Video:
           <a href={`https://www.youtube.com/watch?v=${details!.latestVideoId}`}>
+            {" "}
             here
           </a>
         </p>
