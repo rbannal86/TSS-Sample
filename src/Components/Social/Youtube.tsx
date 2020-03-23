@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from "react";
 import GetLatestYoutube from "../../Services/Youtube";
 import Details from "../../Details";
+import { YTdetails } from "../../Types/YTdetails";
 
-type YTdetails = {
-  channelId: string;
-  title: string;
-  description: string;
-  customUrl: string;
-  thumbnail: string;
-  latestVideoId: string;
-};
+import "./Youtube.css";
 
 const Youtube = () => {
   const [details, setDetails] = useState<YTdetails>();
@@ -22,7 +16,8 @@ const Youtube = () => {
 
   if (details && details.channelId) {
     return (
-      <div>
+      <div className="youtube-div">
+        <h3>This contains youtube info to be parsed later</h3>
         <p>Channel id: {details!.channelId}</p>
         <p>Title: {details!.title}</p>
         <p>
