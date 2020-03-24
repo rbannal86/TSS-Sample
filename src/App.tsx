@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Youtube from "./Components/Social/Youtube";
 import Instagram from "./Components/Social/Instagram";
-// import Details from "./Details";
+import Twitter from "./Components/Social/Twitter";
 
 const App = () => {
   return (
     <div className="App">
-      <p>app div</p>
       <Youtube />
       <Instagram />
+      <Twitter />
     </div>
   );
 };
