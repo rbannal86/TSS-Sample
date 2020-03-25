@@ -6,3 +6,10 @@ export type YTdetails = {
   thumbnail: string;
   latestVideoId: string;
 };
+
+export type YTSnippet = {
+  title: string;
+  description: string;
+  customUrl: string;
+  thumbnails: any;
+};

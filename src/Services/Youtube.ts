@@ -1,4 +1,4 @@
-import { YTSnippet } from "../Types/YTSnippet";
+import { YTSnippet } from "../Types/Youtube";
 
 const GetLatestYoutube = async (name: string) => {
   const nameSearch = await fetch(
