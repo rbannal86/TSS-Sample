@@ -13,6 +13,7 @@ const Twitter = () => {
           tweetLimit: 10,
           width: "30vw"
         }}
+        autoheight
         sourceType="profile"
         screenName={Details.twitter}
       />
