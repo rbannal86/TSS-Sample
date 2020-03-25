@@ -3,7 +3,9 @@ const Details = {
   youtube: "gernaderjake",
   instagram: "gernaderjake",
   twitter: "gernaderjake",
-  mixer: "gernaderjake"
+  mixer: "gernaderjake",
+  email: "gernaderjake@gmail.com",
+  twitchLogin: "gernaderjake"
 };
 
 export default Details;
