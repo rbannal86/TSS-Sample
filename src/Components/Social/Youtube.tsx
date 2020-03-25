@@ -18,8 +18,8 @@ const Youtube = () => {
     return (
       <div className="youtube-div">
         <h3>This contains youtube info to be parsed later</h3>
-        <p>Channel id: {details!.channelId}</p>
-        <p>Title: {details!.title}</p>
+        <p>Channel id: {details.channelId}</p>
+        <p>Title: {details.title}</p>
         <p>
           Logo:
           <img
@@ -32,11 +32,11 @@ const Youtube = () => {
         <p>Desc: {details!.description}</p>
         <p>
           Channel link:
-          <a href={`http://youtube.com/${details!.customUrl}`}> here</a>
+          <a href={`http://youtube.com/${details.customUrl}`}> here</a>
         </p>
         <p>
           Latest Video:
-          <a href={`https://www.youtube.com/watch?v=${details!.latestVideoId}`}>
+          <a href={`https://www.youtube.com/watch?v=${details.latestVideoId}`}>
             {" "}
             here
           </a>
