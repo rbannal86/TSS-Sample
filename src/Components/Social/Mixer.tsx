@@ -1,13 +1,15 @@
 import React from "react";
+import ReactMixerEmbed from "react-mixer-embed";
 import Details from "../../Details";
 
 const Mixer = () => {
   return (
     <div>
       <p>MIXERmixerMIXERmixer</p>
-      <object
-        data={`https://mixer.com/embed/player/${Details.mixer}`}
-        title="Mixer Embed"
+      <ReactMixerEmbed
+        options={{
+          channel: "ninja"
+        }}
       />
       <button>
         <a
