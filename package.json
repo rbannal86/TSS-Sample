@@ -21,6 +21,7 @@
     "react-image-gallery": "^1.0.6",
     "react-mixer-embed": "^0.1.15",
     "react-scripts": "3.4.0",
+    "react-twitch-embed": "^1.2.3",
     "react-twitter-embed": "^3.0.3",
     "typescript": "^3.7.5"
   },

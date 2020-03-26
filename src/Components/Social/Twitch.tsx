@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { TwitchPlayer } from "react-twitch-embed";
 import { getTwitchInfo } from "../../Services/Twitch";
-
 import Details from "../../Details";
 import { TwitchUser } from "../../Types/Twitch";
 
@@ -32,6 +32,12 @@ export const Twitch = () => {
             width="42"
           />
         </p>
+        <TwitchPlayer
+          channel={`${Details.twitchLogin}`}
+          theme="dark"
+          withChat="False"
+          muted
+        />
       </div>
     );
   } else {
