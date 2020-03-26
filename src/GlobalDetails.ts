@@ -1,4 +1,4 @@
-const Details = {
+const GlobalDetails = {
   name: "Gernader Jake",
   youtube: "gernaderjake",
   instagram: "gernaderjake",
@@ -8,4 +8,4 @@ const Details = {
   twitchLogin: "gernaderjake"
 };
 
-export default Details;
+export default GlobalDetails;

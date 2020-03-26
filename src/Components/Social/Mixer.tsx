@@ -1,6 +1,6 @@
 import React from "react";
 import ReactMixerEmbed from "react-mixer-embed";
-import Details from "../../Details";
+import GlobalDetails from "../../GlobalDetails";
 
 const Mixer = () => {
   return (
@@ -13,11 +13,11 @@ const Mixer = () => {
       />
       <button>
         <a
-          href={`https://mixer.com/${Details.mixer}`}
+          href={`https://mixer.com/${GlobalDetails.mixer}`}
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit {Details.mixer} on Mixer
+          Visit {GlobalDetails.mixer} on Mixer
         </a>
       </button>
     </div>

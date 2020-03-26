@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import GetLatestYoutube from "../../Services/Youtube";
-import Details from "../../Details";
+import GlobalDetails from "../../GlobalDetails";
 import { YTdetails } from "../../Types/Youtube";
 
 export const Youtube = () => {
   const [details, setDetails] = useState<YTdetails>();
 
   useEffect(() => {
-    GetLatestYoutube(Details.youtube).then(data => {
+    GetLatestYoutube(GlobalDetails.youtube).then(data => {
       setDetails(data);
     });
   }, []);
@@ -22,7 +22,7 @@ export const Youtube = () => {
           Logo:
           <img
             src={details!.thumbnail}
-            alt={`${Details.name}'s Logo`}
+            alt={`${GlobalDetails.name}'s Logo`}
             height="42"
             width="42"
           />

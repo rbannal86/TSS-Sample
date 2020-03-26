@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { TwitchPlayer } from "react-twitch-embed";
 import { getTwitchInfo } from "../../Services/Twitch";
-import Details from "../../Details";
+import GlobalDetails from "../../GlobalDetails";
 import { TwitchUser } from "../../Types/Twitch";
 
 export const Twitch = () => {
   const [details, setDetails] = useState<TwitchUser>();
 
   useEffect(() => {
-    getTwitchInfo(Details.twitchLogin).then(data => {
+    getTwitchInfo(GlobalDetails.twitchLogin).then(data => {
       setDetails(data);
     });
   }, []);
-
-  //   console.log(details);
 
   if (details && details.display_name) {
     return (
@@ -27,13 +25,13 @@ export const Twitch = () => {
           Logo:
           <img
             src={details.profile_image_url}
-            alt={`${Details.name}'s Logo`}
+            alt={`${GlobalDetails.name}'s Logo`}
             height="42"
             width="42"
           />
         </p>
         <TwitchPlayer
-          channel={`${Details.twitchLogin}`}
+          channel={`${GlobalDetails.twitchLogin}`}
           theme="dark"
           withChat="False"
           muted
