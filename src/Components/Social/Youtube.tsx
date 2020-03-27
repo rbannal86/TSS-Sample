@@ -3,6 +3,9 @@ import GetLatestYoutube from "../../Services/Youtube";
 import GlobalDetails from "../../GlobalDetails";
 import { YTdetails } from "../../Types/Youtube";
 
+// import YouTube from "react-youtube";
+import ReactPlayer from "react-player";
+
 export const Youtube = () => {
   const [details, setDetails] = useState<YTdetails>();
 
@@ -32,13 +35,10 @@ export const Youtube = () => {
           Channel link:
           <a href={`http://youtube.com/${details.customUrl}`}> here</a>
         </p>
-        <p>
-          Latest Video:
-          <a href={`https://www.youtube.com/watch?v=${details.latestVideoId}`}>
-            {" "}
-            here
-          </a>
-        </p>
+        <p>Latest Video:</p>
+        <ReactPlayer
+          url={`https://www.youtube.com/watch?v=${details.latestVideoId}`}
+        />
       </div>
     );
   } else {

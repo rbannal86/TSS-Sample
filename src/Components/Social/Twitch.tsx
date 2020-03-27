@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { TwitchPlayer } from "react-twitch-embed";
 import { getTwitchInfo } from "../../Services/Twitch";
 import GlobalDetails from "../../GlobalDetails";
 import { TwitchUser } from "../../Types/Twitch";
+import ReactPlayer from "react-player";
 
 export const Twitch = () => {
   const [details, setDetails] = useState<TwitchUser>();
@@ -30,11 +30,8 @@ export const Twitch = () => {
             width="42"
           />
         </p>
-        <TwitchPlayer
-          channel={`${GlobalDetails.twitchLogin}`}
-          theme="dark"
-          withChat="False"
-          muted
+        <ReactPlayer
+          url={`https://www.twitch.tv/${GlobalDetails.twitchLogin}`}
         />
       </div>
     );

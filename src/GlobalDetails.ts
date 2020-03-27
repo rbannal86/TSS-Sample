@@ -3,7 +3,7 @@ const GlobalDetails = {
   youtube: "gernaderjake",
   instagram: "gernaderjake",
   twitter: "gernaderjake",
-  mixer: "gernaderjake",
+  mixer: "",
   email: "gernaderjake@gmail.com",
   twitchLogin: "gernaderjake"
 };
