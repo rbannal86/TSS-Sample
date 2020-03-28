@@ -1,5 +1,5 @@
 import React from "react";
-import GlobalDetails from "../../GlobalDetails";
+import { GlobalDetails } from "../../GlobalDetails";
 const {
   TwitterTimelineEmbed,
   TwitterFollowButton
@@ -15,9 +15,9 @@ export const Twitter = () => {
         }}
         autoheight
         sourceType="profile"
-        screenName={GlobalDetails.Twitter}
+        screenName={GlobalDetails.Twitter.string}
       />
-      <TwitterFollowButton screenName={GlobalDetails.Twitter} />
+      <TwitterFollowButton screenName={GlobalDetails.Twitter.string} />
     </div>
   );
 };

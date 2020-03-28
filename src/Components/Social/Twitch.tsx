@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getTwitchInfo } from "../../Services/Twitch";
-import GlobalDetails from "../../GlobalDetails";
+import { GlobalDetails } from "../../GlobalDetails";
 import { TwitchUser } from "../../Types/Twitch";
 import ReactPlayer from "react-player";
 
@@ -10,7 +10,7 @@ export const Twitch = () => {
   const [details, setDetails] = useState<TwitchUser>();
 
   useEffect(() => {
-    getTwitchInfo(GlobalDetails.Twitch).then(data => {
+    getTwitchInfo(GlobalDetails.Twitch.string).then(data => {
       setDetails(data);
     });
   }, []);
@@ -27,13 +27,13 @@ export const Twitch = () => {
           Logo:
           <img
             src={details.profile_image_url}
-            alt={`${GlobalDetails.name}'s Logo`}
+            alt={`${GlobalDetails.Basic.name}'s Logo`}
             height="42"
             width="42"
           />
         </p>
         <ReactPlayer
-          url={`https://www.twitch.tv/${GlobalDetails.Twitch}`}
+          url={`https://www.twitch.tv/${GlobalDetails.Twitch.string}`}
           className="twitch_player"
         />
       </div>

@@ -8,18 +8,19 @@ import { Footer } from "./Components/Footer/Footer";
 
 import "./Styling/Social.css";
 import "./Styling/Footer.css";
-import GlobalDetails from "./GlobalDetails";
+import { GlobalDetails } from "./GlobalDetails";
 
 const App = () => {
-  let SocialComponents = [Twitch, Instagram, Twitter, Youtube, Mixer];
+  let SocialComponents = [Instagram, Twitter, Mixer, Youtube, Twitch];
 
   return (
     <div className="App">
-      {SocialComponents.map((Item: any, index: number) => {
-        if (Item.name in GlobalDetails) {
-          return <Item key={index} />;
-        } else {
-          return null;
+      {SocialComponents.map((Comp, index) => {
+        if (
+          Comp.name in GlobalDetails &&
+          GlobalDetails[Comp.name].render === true
+        ) {
+          return <Comp key={index} />;
         }
       })}
       <Footer />
