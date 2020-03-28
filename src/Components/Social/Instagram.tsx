@@ -4,7 +4,7 @@ import GetInstagramPosts from "../../Services/Instagram";
 import GlobalDetails from "../../GlobalDetails";
 import ImageGallery from "react-image-gallery";
 
-const Instagram = () => {
+export const Instagram = () => {
   //TO-DO: Define types instead of using any(type here)
 
   type imageData = {
@@ -34,20 +34,20 @@ const Instagram = () => {
   };
 
   const getInsta = () => {
-    GetInstagramPosts(GlobalDetails.instagram).then(data => {
+    GetInstagramPosts(GlobalDetails.Instagram).then(data => {
       let images = data.medias;
       handleInstaData(images);
     });
   };
 
   useEffect(() => {
-    setInstaUrl(`https://instagram.com/${GlobalDetails.instagram}`);
+    setInstaUrl(`https://instagram.com/${GlobalDetails.Instagram}`);
     getInsta();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
-    <div>
+    <div className="social-div">
       <h3>INSTAGRAM</h3>
       {images.length > 0 ? <ImageGallery items={images} /> : null}
       <a href={instaUrl} target="_blank" rel="noopener noreferrer">
@@ -56,5 +56,3 @@ const Instagram = () => {
     </div>
   );
 };
-
-export default Instagram;

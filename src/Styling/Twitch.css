@@ -1,0 +1,5 @@
+.twitch_player {
+  object-fit: cover;
+  width: fit-content;
+  height: auto;
+}

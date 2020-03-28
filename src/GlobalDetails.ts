@@ -1,11 +1,12 @@
 const GlobalDetails = {
   name: "Gernader Jake",
-  youtube: "gernaderjake",
-  instagram: "gernaderjake",
-  twitter: "gernaderjake",
-  mixer: "",
+  Youtube: "gernaderjake",
+  Instagram: "gernaderjake",
+  Twitter: "gernaderjake",
+  Mixer: "",
   email: "gernaderjake@gmail.com",
-  twitchLogin: "gernaderjake"
+  twitchLogin: "gernaderjake",
+  Twitch: "gernaderjake"
 };
 
 export default GlobalDetails;

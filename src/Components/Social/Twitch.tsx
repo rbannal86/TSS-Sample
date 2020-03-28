@@ -4,11 +4,13 @@ import GlobalDetails from "../../GlobalDetails";
 import { TwitchUser } from "../../Types/Twitch";
 import ReactPlayer from "react-player";
 
+import "../../Styling/Twitch.css";
+
 export const Twitch = () => {
   const [details, setDetails] = useState<TwitchUser>();
 
   useEffect(() => {
-    getTwitchInfo(GlobalDetails.twitchLogin).then(data => {
+    getTwitchInfo(GlobalDetails.Twitch).then(data => {
       setDetails(data);
     });
   }, []);
@@ -31,7 +33,8 @@ export const Twitch = () => {
           />
         </p>
         <ReactPlayer
-          url={`https://www.twitch.tv/${GlobalDetails.twitchLogin}`}
+          url={`https://www.twitch.tv/${GlobalDetails.Twitch}`}
+          className="twitch_player"
         />
       </div>
     );

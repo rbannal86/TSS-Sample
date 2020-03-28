@@ -5,9 +5,9 @@ const {
   TwitterFollowButton
 } = require("react-twitter-embed");
 
-const Twitter = () => {
+export const Twitter = () => {
   return (
-    <div>
+    <div className="social-div">
       <TwitterTimelineEmbed
         options={{
           tweetLimit: 10,
@@ -15,11 +15,9 @@ const Twitter = () => {
         }}
         autoheight
         sourceType="profile"
-        screenName={GlobalDetails.twitter}
+        screenName={GlobalDetails.Twitter}
       />
-      <TwitterFollowButton screenName={GlobalDetails.twitter} />
+      <TwitterFollowButton screenName={GlobalDetails.Twitter} />
     </div>
   );
 };
-
-export default Twitter;

@@ -10,7 +10,7 @@ export const Youtube = () => {
   const [details, setDetails] = useState<YTdetails>();
 
   useEffect(() => {
-    GetLatestYoutube(GlobalDetails.youtube).then(data => {
+    GetLatestYoutube(GlobalDetails.Youtube).then(data => {
       setDetails(data);
     });
   }, []);

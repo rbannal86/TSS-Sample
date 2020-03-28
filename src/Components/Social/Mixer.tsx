@@ -1,20 +1,20 @@
 import React from "react";
 import GlobalDetails from "../../GlobalDetails";
-import ReactPlayer from "react-player";
+import ReactMixerEmbed from "react-mixer-embed";
 
-const Mixer = () => {
-  if (GlobalDetails.mixer.length > 0) {
+export const Mixer = () => {
+  if (GlobalDetails.Mixer.length > 0) {
     return (
-      <div>
+      <div className="social-div">
         <p>MIXERmixerMIXERmixer</p>
-        <ReactPlayer url={`https://mixer.com/${GlobalDetails.mixer}`} />
+        <ReactMixerEmbed options={{ channel: GlobalDetails.Mixer }} />
         <button>
           <a
-            href={`https://mixer.com/${GlobalDetails.mixer}`}
+            href={`https://mixer.com/${GlobalDetails.Mixer}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            Visit {GlobalDetails.mixer} on Mixer
+            Visit {GlobalDetails.Mixer} on Mixer
           </a>
         </button>
       </div>
@@ -23,5 +23,3 @@ const Mixer = () => {
     return null;
   }
 };
-
-export default Mixer;
