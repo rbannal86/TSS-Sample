@@ -1,7 +1,7 @@
 import "react-image-gallery/styles/css/image-gallery.css";
 import React, { useState, useEffect } from "react";
 import GetInstagramPosts from "../../Services/Instagram";
-import GlobalDetails from "../../GlobalDetails";
+import { GlobalDetails } from "../../GlobalDetails";
 import ImageGallery from "react-image-gallery";
 
 export const Instagram = () => {
@@ -34,14 +34,14 @@ export const Instagram = () => {
   };
 
   const getInsta = () => {
-    GetInstagramPosts(GlobalDetails.Instagram).then(data => {
+    GetInstagramPosts(GlobalDetails.Instagram.string).then(data => {
       let images = data.medias;
       handleInstaData(images);
     });
   };
 
   useEffect(() => {
-    setInstaUrl(`https://instagram.com/${GlobalDetails.Instagram}`);
+    setInstaUrl(`https://instagram.com/${GlobalDetails.Instagram.string}`);
     getInsta();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

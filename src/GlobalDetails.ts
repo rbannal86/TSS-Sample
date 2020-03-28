@@ -1,12 +1,30 @@
-const GlobalDetails = {
-  name: "Gernader Jake",
-  Youtube: "gernaderjake",
-  Instagram: "gernaderjake",
-  Twitter: "gernaderjake",
-  Mixer: "",
-  email: "gernaderjake@gmail.com",
-  twitchLogin: "gernaderjake",
-  Twitch: "gernaderjake"
-};
+interface KeyString {
+  [key: string]: any;
+}
 
-export default GlobalDetails;
+export const GlobalDetails: KeyString = {
+  Basic: {
+    name: "Gernader Jake",
+    email: "jsgernaderjake@gmail.com"
+  },
+  Youtube: {
+    render: true,
+    string: "gernaderjake"
+  },
+  Instagram: {
+    render: true,
+    string: "gernaderjake"
+  },
+  Twitter: {
+    render: true,
+    string: "gernaderjake"
+  },
+  Mixer: {
+    render: false,
+    string: ""
+  },
+  Twitch: {
+    render: true,
+    string: "gernaderjake"
+  }
+};
